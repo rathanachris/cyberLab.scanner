@@ -4,16 +4,16 @@
 #include <time.h>
 #include <math.h>
 
-#define SIZE 20 // ទំហំ Radar
+#define SIZE 20 // SIZE Radar
 
 int main() {
     srand(time(NULL));
 
-    // លុបអេក្រង់ និងលាក់ Cursor
+    // Clear screen and hide Cursor
     printf("\033[2J\033[?25l");
 
-    for (int t = 1; t < 2000; t++) { // ឱ្យវាដើរយូរជាងមុនបន្តិច
-        printf("\033[H"); // ត្រឡប់ទៅលើវិញ
+    for (int t = 1; t < 2000; t++) { // Walk a little longer.
+        printf("\033[H"); // Back to top
 
         printf("\033[1;32m[ RADAR LOCATION HUMAN PRESENCE SCANNER v2.51.0 ]\033[0m\n");
         printf("\033[1;36m MODE: DIRECTIONAL SCANNER \033[0m\n");
@@ -37,9 +37,9 @@ int main() {
                         // បង្កើតចំណុច Heat ចៃដន្យ
                         int heat = rand() % 100;
                         if (dist < 4 && heat > 95) {
-                            printf("\033[1;31m•"); // កណ្តាលខ្លួនមនុស្ស (ក្រហម)
+                            printf("\033[1;31m•"); // The middle of the human body (Re)
                         } else if (dist < 7 && heat > 95) {
-                            printf("\033[1;33m•"); // កម្តៅជុំវិ(លឿង)
+                            printf("\033[1;33m•"); // Warmth (yellow)
                         } else {
                             printf("\033[0;36m_"); // ផ្ទៃ Radar blue 
                         }
@@ -51,7 +51,7 @@ int main() {
         
         printf("\033[1;32m|████████████████████████████████████████|\033[0m\n");
         
-        // កែសម្រួល %d និង %f ឱ្យត្រឹមត្រូវ
+        // Edit %d and %f to be correct
         printf(" SIGNAL: [ \033[1;33mSTABLE\033[0m ] |📡<<[U+2809]>>SCANNING: %d%% | POS: X:%.2f Y:%.2f\n", 
                 (t * 100) / 200, cos(sweep_angle)*5, sin(sweep_angle)*5); 
         
