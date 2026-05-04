@@ -1,4 +1,4 @@
-#include <iostream>  // command ($status.c.c++ 
+#include <iostream>  
 #include <iomanip>
 #include <thread>
 #include <chrono>
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-// Function សម្រាប់លុប Screen
+// Function clear Screen
 void clear() {
     // ANSI escape codes ដើម្បីសម្អាតអេក្រង់
     cout << "\033[2J\033[H";
@@ -60,7 +60,7 @@ int main() {
             break; 
         }
 
-        // ពន្យារពេល 50 milliseconds
+        // 50 milliseconds
         this_thread::sleep_for(chrono::milliseconds(50));
     }
 
