@@ -10,7 +10,7 @@ int main() {
     while(1) {
 
         // Reset cursor to top-left and print header
-        printf("\033[H\033[1;35m[ STEREO AUDIO WAVEFORM ]\033[1;340m\n\n");
+        printf("\033[H\033[1;35m[ STEREO AUDIO WAVEFORM ]\033[1;34m\n\n");
         for(int i = 0; i < 15; i++) {
             // Calculate wave positions (scaled to fit 20-character bars)
             // Added '*' operators and fixed variable names
